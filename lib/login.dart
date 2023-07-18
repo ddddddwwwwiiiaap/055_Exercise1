@@ -1,4 +1,5 @@
 import 'package:exercise1/Widgets/customtextformfield.dart';
+import 'package:exercise1/signup.dart';
 import 'package:exercise1/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -168,7 +169,7 @@ class _LoginState extends State<Login> {
                       onTap: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (_) => SplashScreen(),
+                            builder: (_) => SignUp(),
                           ),
                         );
                       },
