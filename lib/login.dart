@@ -1,6 +1,4 @@
-import 'package:exercise1/Widgets/customtextformfield.dart';
 import 'package:exercise1/signup.dart';
-import 'package:exercise1/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -11,7 +9,6 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-
   bool _isObscure = true;
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -70,11 +67,27 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
-              CustomTextFormField(
-                controller: _nameController,
-                hintText: "Enter your name",
-                obscureText: false,
-                icon: Icons.person,
+              Padding(
+                padding: const EdgeInsets.only(
+                    right: 20.0, left: 20.0, bottom: 10.0),
+                child: TextFormField(
+                  controller: _nameController,
+                  decoration: InputDecoration(
+                    hintText: "Enter your name",
+                    hintStyle: Theme.of(context).textTheme.bodyText1,
+                    prefixIcon: const Icon(
+                      Icons.person,
+                      color: Colors.blue,
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide: const BorderSide(
+                        color: Colors.red,
+                        width: 3,
+                      ),
+                    ),
+                  ),
+                ),
               ),
               Container(
                 margin: const EdgeInsets.only(top: 15),
@@ -147,10 +160,9 @@ class _LoginState extends State<Login> {
               ),
               Padding(
                 padding: const EdgeInsets.all(20),
-                child:
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
                     const Text(
                       "Don't have an account? ",
                       style: TextStyle(

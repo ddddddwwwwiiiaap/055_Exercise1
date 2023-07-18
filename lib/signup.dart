@@ -1,4 +1,3 @@
-import 'package:exercise1/Widgets/customtextformfield.dart';
 import 'package:exercise1/login.dart';
 import 'package:flutter/material.dart';
 
@@ -11,9 +10,11 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   bool _isObscure = true;
+  bool _isObscureConfirm = true;
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _passwordConfirmController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -97,11 +98,27 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
             ),
-            CustomTextFormField(
-              controller: _nameController,
-              hintText: "Enter your name",
-              obscureText: false,
-              icon: Icons.person,
+            Padding(
+              padding:
+                  const EdgeInsets.only(right: 20.0, left: 20.0, bottom: 10.0),
+              child: TextFormField(
+                controller: _nameController,
+                decoration: InputDecoration(
+                  hintText: "Enter your name",
+                  hintStyle: Theme.of(context).textTheme.bodyText1,
+                  prefixIcon: const Icon(
+                    Icons.person,
+                    color: Colors.blue,
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: const BorderSide(
+                      color: Colors.red,
+                      width: 3,
+                    ),
+                  ),
+                ),
+              ),
             ),
             Container(
               margin: const EdgeInsets.only(top: 15),
@@ -116,11 +133,27 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
             ),
-            CustomTextFormField(
-              controller: _emailController,
-              hintText: "Enter your email",
-              obscureText: false,
-              icon: Icons.email,
+            Padding(
+              padding:
+                  const EdgeInsets.only(right: 20.0, left: 20.0, bottom: 10.0),
+              child: TextFormField(
+                controller: _emailController,
+                decoration: InputDecoration(
+                  hintText: "Enter your email",
+                  hintStyle: Theme.of(context).textTheme.bodyText1,
+                  prefixIcon: const Icon(
+                    Icons.email,
+                    color: Colors.blue,
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: const BorderSide(
+                      color: Colors.red,
+                      width: 3,
+                    ),
+                  ),
+                ),
+              ),
             ),
             Container(
               margin: const EdgeInsets.only(top: 15),
@@ -179,8 +212,8 @@ class _SignUpState extends State<SignUp> {
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
               child: TextFormField(
-                obscureText: _isObscure,
-                controller: _passwordController,
+                obscureText: _isObscureConfirm,
+                controller: _passwordConfirmController,
                 decoration: InputDecoration(
                   hintText: "Re-Enter your password",
                   hintStyle: Theme.of(context).textTheme.bodyText1,
@@ -197,7 +230,7 @@ class _SignUpState extends State<SignUp> {
                     color: Colors.grey,
                     onPressed: () {
                       setState(() {
-                        _isObscure = !_isObscure;
+                        _isObscureConfirm = !_isObscureConfirm;
                       });
                     },
                   ),
