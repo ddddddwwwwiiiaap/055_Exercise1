@@ -1,3 +1,4 @@
+import 'package:exercise1/login.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -67,7 +68,7 @@ class SplashScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (BuildContext context) => const SplashScreen(),
+                      builder: (BuildContext context) => Login(),
                     ),
                   );
                 },
