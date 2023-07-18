@@ -24,7 +24,14 @@ class _LoginState extends State<Login> {
           child: Column(
             children: [
               const SizedBox(
-                height: 300,
+                height: 100,
+              ),
+              Image.asset(
+                'assets/images/iconlogin.png',
+                width: 350,
+              ),
+              const SizedBox(
+                height: 20,
               ),
               const Text(
                 "Let's get started.",
