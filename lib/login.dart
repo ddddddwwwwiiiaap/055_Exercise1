@@ -9,6 +9,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final formKey = GlobalKey<FormState>();
   bool _isObscure = true;
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -16,7 +17,6 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -54,138 +54,151 @@ class _LoginState extends State<Login> {
               const SizedBox(
                 height: 20,
               ),
-              Container(
-                margin: const EdgeInsets.only(top: 15),
-                padding: const EdgeInsets.only(left: 20),
-                alignment: Alignment.centerLeft,
-                child: const Text(
-                  "Name",
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    right: 20.0, left: 20.0, bottom: 10.0),
-                child: TextFormField(
-                  controller: _nameController,
-                  decoration: InputDecoration(
-                    hintText: "Enter your name",
-                    hintStyle: Theme.of(context).textTheme.bodyText1,
-                    prefixIcon: const Icon(
-                      Icons.person,
-                      color: Colors.blue,
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                      borderSide: const BorderSide(
-                        color: Colors.red,
-                        width: 3,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 15),
-                padding: const EdgeInsets.only(left: 20),
-                alignment: Alignment.centerLeft,
-                child: const Text(
-                  "Password",
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
-                child: TextFormField(
-                  obscureText: _isObscure,
-                  controller: _passwordController,
-                  decoration: InputDecoration(
-                    hintText: "Enter your password",
-                    hintStyle: Theme.of(context).textTheme.bodyText1,
-                    prefixIcon: const Icon(Icons.lock, color: Colors.blue),
-                    errorBorder: const OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      borderSide: BorderSide(
-                        color: Colors.red,
-                        width: 3,
-                      ),
-                    ),
-                    suffixIcon: IconButton(
-                      icon: const Icon(Icons.remove_red_eye),
-                      color: Colors.grey,
-                      onPressed: () {
-                        setState(() {
-                          _isObscure = !_isObscure;
-                        });
-                      },
-                    ),
-                  ),
-                ),
-              ),
-              InkWell(
-                child: Container(
-                  margin: const EdgeInsets.only(top: 50),
-                  height: 50,
-                  width: MediaQuery.of(context).size.width * 0.9,
-                  child: Center(
-                    child: Text(
-                      "Sign In",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.amber,
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                ),
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => Login(),
-                    ),
-                  );
-                },
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+              Form(
+                key: formKey,
+                child: Column(
                   children: [
-                    const Text(
-                      "Don't have an account? ",
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold,
+                    Container(
+                      margin: const EdgeInsets.only(top: 15),
+                      padding: const EdgeInsets.only(left: 20),
+                      alignment: Alignment.centerLeft,
+                      child: const Text(
+                        "Name",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          right: 20.0, left: 20.0, bottom: 10.0),
+                      child: TextFormField(
+                        controller: _nameController,
+                        decoration: InputDecoration(
+                          hintText: "Enter your name",
+                          hintStyle: Theme.of(context).textTheme.bodyText1,
+                          prefixIcon: const Icon(
+                            Icons.person,
+                            color: Colors.blue,
+                          ),
+                        ),
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "Please enter your name";
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 15),
+                      padding: const EdgeInsets.only(left: 20),
+                      alignment: Alignment.centerLeft,
+                      child: const Text(
+                        "Password",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 20, right: 20, bottom: 10),
+                      child: TextFormField(
+                        obscureText: _isObscure,
+                        controller: _passwordController,
+                        decoration: InputDecoration(
+                          hintText: "Enter your password",
+                          hintStyle: Theme.of(context).textTheme.bodyText1,
+                          prefixIcon: const Icon(
+                            Icons.lock,
+                            color: Colors.blue,
+                          ),
+                          suffixIcon: IconButton(
+                            icon: const Icon(Icons.remove_red_eye),
+                            color: Colors.grey,
+                            onPressed: () {
+                              setState(() {
+                                _isObscure = !_isObscure;
+                              });
+                            },
+                          ),
+                        ),
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "Password enter your password";
+                          } else if (value.length < 6) {
+                            return "Password must be at least 6 characters";
+                          }
+                          return null;
+                        },
                       ),
                     ),
                     InkWell(
-                      child: const Text(
-                        "Sign up",
-                        style: TextStyle(
+                      child: Container(
+                        margin: const EdgeInsets.only(top: 50),
+                        height: 50,
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        child: Center(
+                          child: Text(
+                            "Sign In",
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        decoration: BoxDecoration(
                           color: Colors.amber,
-                          fontWeight: FontWeight.bold,
+                          borderRadius: BorderRadius.circular(50),
                         ),
                       ),
                       onTap: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => SignUp(),
-                          ),
-                        );
+                        if (formKey.currentState!.validate()) {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => SignUp(),
+                            ),
+                          );
+                        }
                       },
-                    )
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            "Don't have an account? ",
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          InkWell(
+                            child: const Text(
+                              "Sign up",
+                              style: TextStyle(
+                                color: Colors.amber,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => const SignUp(),
+                                ),
+                              );
+                            },
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
