@@ -54,8 +54,24 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
             ),
-            const SizedBox(
+            Container(
+              margin: const EdgeInsets.only(right: 5),
+              width: 100,
               height: 100,
+              decoration: BoxDecoration(
+                image: const DecorationImage(
+                  image: AssetImage('assets/images/signup.jpg'),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.circular(100),
+                border: Border.all(
+                  color: Colors.white,
+                  width: 1,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
             ),
             const Text(
               'Register',

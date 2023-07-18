@@ -62,6 +62,7 @@ flutter:
   assets:
   - assets/images/splashscreen.png
   - assets/images/iconlogin.png
+  - assets/images/signup.jpg
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
