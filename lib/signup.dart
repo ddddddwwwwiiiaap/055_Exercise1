@@ -1,3 +1,4 @@
+import 'package:exercise1/home_page.dart';
 import 'package:exercise1/login.dart';
 import 'package:exercise1/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -274,10 +275,12 @@ class _SignUpState extends State<SignUp> {
                     ),
                     onTap: () {
                       if (formKey.currentState!.validate()) {
+                        formKey.currentState!.save();
                         print('Sign up Button Pressed');
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (BuildContext context) => SplashScreen(),
+                            builder: (context) =>
+                                HomePage(name: _nameController.text),
                           ),
                         );
                       }

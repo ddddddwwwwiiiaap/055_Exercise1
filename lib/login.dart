@@ -1,3 +1,4 @@
+import 'package:exercise1/home_page.dart';
 import 'package:exercise1/signup.dart';
 import 'package:flutter/material.dart';
 
@@ -87,6 +88,8 @@ class _LoginState extends State<Login> {
                         validator: (value) {
                           if (value!.isEmpty) {
                             return "Please enter your name";
+                          } else if (value.length < 6) {
+                            return "Name must be at least 6 characters";
                           }
                           return null;
                         },
@@ -160,9 +163,13 @@ class _LoginState extends State<Login> {
                       ),
                       onTap: () {
                         if (formKey.currentState!.validate()) {
+                          formKey.currentState!.save();
+                          print('Sign up Button Pressed');
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (_) => SignUp(),
+                              builder: (context) => HomePage(
+                                name: _nameController.text,
+                              ),
                             ),
                           );
                         }
