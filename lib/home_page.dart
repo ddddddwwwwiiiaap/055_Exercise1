@@ -1,16 +1,26 @@
+/// Nama Module: home_page.dart
+/// Deskripsi: Module ini digunakan untuk membuat tampilan halaman utama
+/// 
+/// Kode ini berisi implementasi dari class HomePage
+
 import 'package:exercise1/pokemon.dart';
 import 'package:flutter/material.dart';
 
+/// HomePage class adalah class yang digunakan untuk membuat tampilan halaman utama
 class HomePage extends StatefulWidget {
+  /// const HomePage ({Key? key, required this.name}) digunakan untuk membuat konstruktor dari class HomePage dengan parameter key dan name
   const HomePage({super.key, this.name});
-
+  /// name adalah variabel yang digunakan untuk menyimpan nama user yang diinputkan pada halaman login
   final String? name;
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
+/// _HomePageState class adalah class yang digunakan untuk membuat state dari halaman utama
 class _HomePageState extends State<HomePage> {
+
+  /// Method build digunakan untuk membuat tampilan halaman utama
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,5 +1,11 @@
+/// Nama Module: pokemon.dart
+/// Deskripsi: Module ini digunakan untuk membuat tampilan halaman pokemon
+/// 
+/// Kode ini berisi implementasi dari class Pokemon
+
 import 'package:flutter/material.dart';
 
+/// Pokemon class adalah class yang digunakan untuk membuat tampilan halaman pokemon
 class Pokemon1 extends StatelessWidget {
   const Pokemon1({
     super.key,
@@ -9,11 +15,16 @@ class Pokemon1 extends StatelessWidget {
     required this.deskripsi,
   });
 
+  /// String gambar adalah variabel yang digunakan untuk menyimpan gambar pokemon
   final String gambar;
+  /// String nomor adalah variabel yang digunakan untuk menyimpan nomor pokemon
   final String nomor;
+  /// String namapokemon adalah variabel yang digunakan untuk menyimpan nama pokemon
   final String namapokemon;
+  /// String deskripsi adalah variabel yang digunakan untuk menyimpan deskripsi pokemon
   final String deskripsi;
 
+  /// Method build digunakan untuk membuat tampilan halaman pokemon
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -140,6 +151,7 @@ class Pokemon1 extends StatelessWidget {
   }
 }
 
+/// Pokemon2 class adalah class yang digunakan untuk membuat tampilan halaman pokemon
 class Pokemon2 extends StatelessWidget {
   const Pokemon2({
     super.key,
@@ -149,11 +161,16 @@ class Pokemon2 extends StatelessWidget {
     required this.deskripsi,
   });
 
+  /// String gambar adalah variabel yang digunakan untuk menyimpan gambar pokemon
   final String gambar;
+  /// String nomor adalah variabel yang digunakan untuk menyimpan nomor pokemon
   final String nomor;
+  /// String namapokemon adalah variabel yang digunakan untuk menyimpan nama pokemon
   final String namapokemon;
+  /// String deskripsi adalah variabel yang digunakan untuk menyimpan deskripsi pokemon
   final String deskripsi;
 
+  /// Method build digunakan untuk membuat tampilan halaman pokemon
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -264,6 +281,7 @@ class Pokemon2 extends StatelessWidget {
   }
 }
 
+/// Pokemon3 class adalah class yang digunakan untuk membuat tampilan halaman pokemon
 class Pokemon3 extends StatelessWidget {
   const Pokemon3({
     super.key,
@@ -273,11 +291,16 @@ class Pokemon3 extends StatelessWidget {
     required this.deskripsi,
   });
 
+  /// String gambar adalah variabel yang digunakan untuk menyimpan gambar pokemon
   final String gambar;
+  /// String nomor adalah variabel yang digunakan untuk menyimpan nomor pokemon
   final String nomor;
+  /// String namapokemon adalah variabel yang digunakan untuk menyimpan nama pokemon
   final String namapokemon;
+  /// String deskripsi adalah variabel yang digunakan untuk menyimpan deskripsi pokemon
   final String deskripsi;
 
+  /// Method build digunakan untuk membuat tampilan halaman pokemon
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -392,6 +415,7 @@ class Pokemon3 extends StatelessWidget {
   }
 }
 
+/// Pokemon4 class adalah class yang digunakan untuk membuat tampilan halaman pokemon
 class Pokemon4 extends StatelessWidget {
   const Pokemon4({
     super.key,
@@ -401,11 +425,16 @@ class Pokemon4 extends StatelessWidget {
     required this.deskripsi,
   });
 
+  /// String gambar adalah variabel yang digunakan untuk menyimpan gambar pokemon
   final String gambar;
+  /// String nomor adalah variabel yang digunakan untuk menyimpan nomor pokemon
   final String nomor;
+  /// String namapokemon adalah variabel yang digunakan untuk menyimpan nama pokemon
   final String namapokemon;
+  /// String deskripsi adalah variabel yang digunakan untuk menyimpan deskripsi pokemon
   final String deskripsi;
 
+  /// Method build digunakan untuk membuat tampilan halaman pokemon
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -539,6 +568,7 @@ class Pokemon4 extends StatelessWidget {
   }
 }
 
+/// Pokemon5 class adalah class yang digunakan untuk membuat tampilan halaman pokemon
 class Pokemon5 extends StatelessWidget {
   const Pokemon5({
     super.key,
@@ -548,11 +578,16 @@ class Pokemon5 extends StatelessWidget {
     required this.deskripsi,
   });
 
+  /// String gambar adalah variabel yang digunakan untuk menyimpan gambar pokemon
   final String gambar;
+  /// String nomor adalah variabel yang digunakan untuk menyimpan nomor pokemon
   final String nomor;
+  /// String namapokemon adalah variabel yang digunakan untuk menyimpan nama pokemon
   final String namapokemon;
+  /// String deskripsi adalah variabel yang digunakan untuk menyimpan deskripsi pokemon
   final String deskripsi;
 
+  /// Method build digunakan untuk membuat tampilan halaman pokemon
   @override
   Widget build(BuildContext context) {
     return Column(

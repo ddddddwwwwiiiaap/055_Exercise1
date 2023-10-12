@@ -1,9 +1,17 @@
+/// Nama Module: splash_screen.dart
+/// Deskripsi: Module ini digunakan untuk membuat tampilan halaman splash screen
+/// 
+/// Kode ini berisi implementasi dari class SplashScreen
+
 import 'package:exercise1/login.dart';
 import 'package:flutter/material.dart';
 
+/// SplashScreen class adalah class yang digunakan untuk membuat tampilan halaman splash screen
 class SplashScreen extends StatelessWidget {
+  /// const SplashScreen ({Key? key}) digunakan untuk membuat konstruktor dari class SplashScreen dengan parameter key
   const SplashScreen({Key? key}) : super(key: key);
 
+  /// Method build digunakan untuk membuat tampilan halaman splash screen
   @override
   Widget build(BuildContext context) {
     return Scaffold(

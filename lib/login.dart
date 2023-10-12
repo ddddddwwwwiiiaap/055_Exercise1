@@ -1,20 +1,33 @@
+/// Nama Module: login.dart
+/// Deskripsi: Module ini digunakan untuk membuat tampilan halaman login
+/// 
+/// Kode ini berisi implementasi dari class Login
+
 import 'package:exercise1/home_page.dart';
 import 'package:exercise1/signup.dart';
 import 'package:flutter/material.dart';
 
+/// Login class adalah class yang digunakan untuk membuat tampilan halaman login
 class Login extends StatefulWidget {
+  ///Login({Key? key}) digunakan untuk membuat konstruktor dari class Login dengan parameter key
   Login({super.key});
 
   @override
   State<Login> createState() => _LoginState();
 }
 
+/// _LoginState class adalah class yang digunakan untuk membuat state dari halaman login
 class _LoginState extends State<Login> {
+  /// formKey digunakan untuk membuat key dari form
   final formKey = GlobalKey<FormState>();
+  /// _isObscure digunakan untuk menyimpan nilai boolean apakah password diinputkan atau tidak
   bool _isObscure = true;
+  /// _nameController digunakan untuk membuat controller dari name
   final TextEditingController _nameController = TextEditingController();
+  /// _passwordController digunakan untuk membuat controller dari password
   final TextEditingController _passwordController = TextEditingController();
 
+  /// Method build digunakan untuk membuat tampilan halaman login
   @override
   Widget build(BuildContext context) {
     return Scaffold(

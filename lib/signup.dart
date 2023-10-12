@@ -1,25 +1,40 @@
+/// Nama Module: signup.dart
+/// Deskripsi: Module ini digunakan untuk membuat tampilan halaman signup
+/// 
+/// Kode ini berisi implementasi dari class SignUp
+
 import 'package:exercise1/home_page.dart';
 import 'package:exercise1/login.dart';
-import 'package:exercise1/splash_screen.dart';
 import 'package:flutter/material.dart';
 
+/// Fungsi main adalah titik masuk utama ke dalam aplikasi
 class SignUp extends StatefulWidget {
+  /// const SignUp ({Key? key}) digunakan untuk membuat konstruktor dari class SignUp dengan parameter key
   const SignUp({super.key});
 
   @override
   State<SignUp> createState() => _SignUpState();
 }
 
+/// _SignUpState class adalah class yang digunakan untuk membuat state dari halaman signup
 class _SignUpState extends State<SignUp> {
+  /// formKey digunakan untuk membuat key dari form
   final formKey = GlobalKey<FormState>();
+  /// _isObscure digunakan untuk menyimpan nilai boolean apakah password diinputkan atau tidak
   bool _isObscure = true;
+  /// _isObscureConfirm digunakan untuk menyimpan nilai boolean apakah password diinputkan atau tidak
   bool _isObscureConfirm = true;
+  /// _nameController digunakan untuk membuat controller dari name
   final TextEditingController _nameController = TextEditingController();
+  /// _emailController digunakan untuk membuat controller dari email
   final TextEditingController _emailController = TextEditingController();
+  /// _passwordController digunakan untuk membuat controller dari password
   final TextEditingController _passwordController = TextEditingController();
+  /// _passwordConfirmController digunakan untuk membuat controller dari password
   final TextEditingController _passwordConfirmController =
       TextEditingController();
 
+  /// Method build digunakan untuk membuat tampilan halaman signup
   @override
   Widget build(BuildContext context) {
     return Scaffold(
